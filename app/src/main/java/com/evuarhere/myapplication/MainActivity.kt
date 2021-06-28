@@ -21,27 +21,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        userNameInput = (userNameInput)
-        passWordInput = (passWordInput)
-        changeButton = (changeButton)
+        userNameInput = findViewById(R.id.userNameInput)
+        passWordInput = findViewById(R.id.passWordInput)
+        changeButton = findViewById(R.id.changeButton)
 
-        changeButton.setOnClickListener({
+        changeButton.setOnClickListener {
             val userName = userNameInput.toString()
             val passWord = passWordInput.text.toString()
 
             login(userName, passWord)
 
-        })
+        }
     }
 
     fun login(userName: String, password: String) {
 
-        if ('isValidCredentials(userName', password)) {
+        if ('isValidCredentials(userName', password)) run {
 
 
             val intent: Intent = intent(this, HomeActivity::class.java)
-            intent,putExtra("username", userName)
-        startActivity(intent)
+            intent, putExtra("username", userName)
+            startActivity(intent)
 
         } else {
             Toast. makeText((applicationContext, "login not successful", Toast.LENGTH_SHORT)){
